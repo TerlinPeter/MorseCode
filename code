@@ -1,0 +1,35 @@
+def morse_code():
+ morse={'a':'.-','b':'-...','c':'-.-.','d':'-..','e':'.','f':'..-.','g':'--.','h':'....','i':'..','j':'.---','k':'-.-','l':'.-..','m':'--','n':'-.','o':'---','p':'.--.','q':'--.-','r':'.-.','s':'...','t':'-','u':'..-','v':'...-','w':'.--','x':'-..-','y':'-.--','z':'--..'}
+ morse1={'.-':'a','-...':'b','-.-.':'c','-..':'d','.':'e','..-.':'f','--':'g','....':'h','..':'i','.---':'j','-.-':'k','.-..':'l','--':'m','-.':'n','---':'o','.--.':'p','--.-':'q','.-.':'r','...':'s','-':'t','..-':'u','...-':'v','.--':'w','-..-':'x','-.--':'y','--..':'z'}
+ n=int(input("1. Text to Morse code\n 2. Morse code to Text\n"))
+ if n==1:
+  text=input("Enter Text\n")
+  c=len(text)
+  x=[]
+  for i in range(0,c):
+   val=text[i]
+   if val in morse:
+    x.append(morse.get(val))
+   elif val==' ':
+    x.append(' ')
+   else:
+    print("TypeError:Invalid Character")
+   i+=1
+  result=' '.join(x)
+  print(result)
+  del x
+ elif n==2:
+  code=input("Enter Code\n")
+  f=code.split()
+  c=len(f)
+  x=[]
+  for i in range(0,c):
+   val=f[i]
+   if val in morse1:
+    x.append(morse1.get(val))
+   else:
+    print("TypeError:Invalid character")
+   i+=1
+  result=' '.join(x)
+  print(result)
+  del x
